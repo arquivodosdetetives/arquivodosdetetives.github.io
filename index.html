@@ -1,3 +1,159 @@
 <html>
-  aaaaaaaaaaaa
+  
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Arquivo Dos Detetives</title>
+    </head>
+	<style>
+		html, body{
+			background-color: #08080A;
+			margin: auto;
+			height:100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.lado{
+		width: 80%;
+		min-height: 300px;
+		margin: auto;
+		display: -webkit-flex;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		}
+		.lado .grupo{
+			padding: 100px;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+		}
+		.grupo{
+			height: 250px;
+			width: 60%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.capa{
+			z-index: 5;
+			position:absolute;
+			transition: all .3s ease-in-out;
+			transform-origin: left center 0px;
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+
+			width: 125px;
+			height: 200px;
+			background: #f9d98c;
+
+			border-top-left-radius: 0px;
+		    border-top-right-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    border-bottom-left-radius: 0px; 
+		}
+		.folha{
+			z-index: 4;
+			position:absolute;
+			transition: all .3s ease-in-out;
+			transform-origin: left center 0px;
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+
+			width: 105px;
+			height: 180px;
+			background: #ffffff;
+
+			border-top-left-radius: 0px;
+		    border-top-right-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    border-bottom-left-radius: 0px; 
+		}
+		.verso{
+			z-index: 3;
+			position:absolute;
+			transition: all .3s ease-in-out;
+			transform-origin: left center 0px;
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+
+			width: 125px;
+			height: 200px;
+			background: #d1b676;
+			
+			border-top-left-radius: 0px;
+		    border-top-right-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    border-bottom-left-radius: 0px; 
+		}
+		.etiqueta{
+			z-index: 3;
+			transition: all .3s ease-in-out;
+			transform-origin: left center 0px;
+			transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			
+			width: 25px;
+		    height: 55px;
+			background: #d1b676;
+			padding-left: 110px;
+			
+			border-top-left-radius: 0px;
+		    border-top-right-radius: 5px;
+		    border-bottom-right-radius: 5px;
+		    border-bottom-left-radius: 0px;
+		}
+
+		.grupo:hover .capa{
+			cursor: pointer;
+			transform: rotateY(45deg) rotateZ(15deg) scale(1.51);
+			-webkit-backface-visibility: hidden;
+			box-shadow: 20px -4px 50 50 #000000;
+		}
+		.grupo:hover .folha{
+			cursor: pointer;
+			transform: rotateY(5deg) rotateZ(11deg) scale(1.5);
+			-webkit-backface-visibility: hidden;
+		}
+		.grupo:hover .verso{
+			cursor: pointer;
+			transform: rotateX(-15deg) rotateY(35deg) rotateZ(13.2deg) scale(1.5);
+			-webkit-backface-visibility: hidden;
+		}
+	</style>
+    <body>
+		<div class="lado">
+			<div id="luna" class="grupo">
+				<div class="capa"></div>
+				<div class="folha"></div>
+				<div class="verso">
+					<div class="etiqueta"></div>
+				</div>
+			</div>
+			<div id="timelinecube"class="grupo">
+				<div class="capa"></div>
+				<div class="folha"></div>
+				<div class="verso">
+					<div class="etiqueta"></div>
+				</div>
+			</div>
+			<div id="whitedoorarg"class="grupo">
+				<div class="capa"></div>
+				<div class="folha"></div>
+				<div class="verso">
+					<div class="etiqueta"></div>
+				</div>
+			</div>
+			<div id="npo"class="grupo">
+				<div class="capa"></div>
+				<div class="folha"></div>
+				<div class="verso">
+					<div class="etiqueta"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
 </html>
