@@ -5,158 +5,189 @@
         <title>Arquivo Dos Detetives</title>
 		<link rel="icon" type="image/png" href="imgs/site/icone.png">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
-	</head>
-	<style>
-		html, body{
-			background-color: #08080A;
-			font-family: 'Special Elite', cursive;
-			color: #ffffff;
-			font-size: 50px;
-			text-align: center;
+		<style>
+			html, body {
+				background-color: #08080A;
+				font-family: 'Special Elite', cursive;
+				color: #ffffff;
+				font-size: 50px;
+				text-align: center;
+				margin: auto;
+				height:100vh;
+			}
+			
+			.lado {
+			width: 80%;
+			max-height: 300px;
 			margin: auto;
-			height:100vh;
-		}
-		
-		.lado{
-		width: 80%;
-		max-height: 300px;
-		margin: auto;
-		display: -webkit-flex;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		}
-		.lado .grupo{
-			padding: 100px;
-			-webkit-flex: 1;
-			-ms-flex: 1;
-			flex: 1;
-		}
-		.grupo{
-			height: 200px;
-			width: 60%;
+			display: -webkit-flex;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-		}
-		.capa{
-			z-index: 5;
-			position:absolute;
-			transition: all .3s ease-in-out;
-			transform-origin: left center 0px;
-			transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
+			}
+			.lado .grupo {
+				padding: 100px;
+				-webkit-flex: 1;
+				-ms-flex: 1;
+				flex: 1;
+			}
+			.grupo{
+				height: 200px;
+				width: 60%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.capa{
+				z-index: 5;
+				position:absolute;
+				transition: all .3s ease-in-out;
+				transform-origin: left center 0px;
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: hidden;
 
-			width: 125px;
-			height: 200px;
-			background: #f9d98c;
+				width: 125px;
+				height: 200px;
+				background: #f9d98c;
 
-			border-top-left-radius: 0px;
-		    border-top-right-radius: 10px;
-		    border-bottom-right-radius: 10px;
-		    border-bottom-left-radius: 0px; 
-		}
-		.folha{
-			z-index: 4;
-			position:absolute;
-			transition: all .3s ease-in-out;
-			transform-origin: left center 0px;
-			transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
+				border-top-left-radius: 0px;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 0px; 
+			}
+			.folha{
+				z-index: 4;
+				position:absolute;
+				transition: all .3s ease-in-out;
+				transform-origin: left center 0px;
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: hidden;
 
-			width: 105px;
-			height: 180px;
-			background: #ffffff;
+				width: 105px;
+				height: 180px;
+				background: #ffffff;
 
-			border-top-left-radius: 0px;
-		    border-top-right-radius: 10px;
-		    border-bottom-right-radius: 10px;
-		    border-bottom-left-radius: 0px; 
-		}
-		.verso{
-			z-index: 3;
-			position:absolute;
-			transition: all .3s ease-in-out;
-			transform-origin: left center 0px;
-			transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
+				border-top-left-radius: 0px;
+				border-top-right-radius: 0px;
+				border-bottom-right-radius: 0px;
+				border-bottom-left-radius: 0px; 
+			}
+			.verso{
+				z-index: 3;
+				position:absolute;
+				transition: all .3s ease-in-out;
+				transform-origin: left center 0px;
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: hidden;
+				display: inline-block;
+				vertical-align: middle;
+				
+				width: 125px;
+				height: 200px;
+				background: #d1b676;
+				
+				border-top-left-radius: 0px;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				border-bottom-left-radius: 0px; 
+			}
+			.etiqueta{
+				z-index: 3;
+				transition: all .3s ease-in-out;
+				transform-origin: left center 0px;
+				transform-style: preserve-3d;
+				-webkit-backface-visibility: hidden;
+				background: #d1b676;
+				
+				<!--width: 25px;
+				height: 55px;
+				padding-left: 110px;-->
+				
+				transform: rotateZ(90deg);
+				width: 25px;
+				height: 55px;
+				margin-left: 0px;
+				
+				border-top-left-radius: 0px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				border-bottom-left-radius: 0px;
+			}
 
-			width: 125px;
-			height: 200px;
-			background: #d1b676;
-			
-			border-top-left-radius: 0px;
-		    border-top-right-radius: 10px;
-		    border-bottom-right-radius: 10px;
-		    border-bottom-left-radius: 0px; 
-		}
-		.etiqueta{
-			z-index: 3;
-			transition: all .3s ease-in-out;
-			transform-origin: left center 0px;
-			transform-style: preserve-3d;
-			-webkit-backface-visibility: hidden;
-			
-			width: 25px;
-		    height: 55px;
-			background: #d1b676;
-			padding-left: 110px;
-			
-			border-top-left-radius: 0px;
-		    border-top-right-radius: 5px;
-		    border-bottom-right-radius: 5px;
-		    border-bottom-left-radius: 0px;
-		}
-
-		.grupo:hover .capa{
-			cursor: pointer;
-			transform: rotateY(45deg) rotateZ(15deg) scale(1.51);
-			-webkit-backface-visibility: hidden;
-			box-shadow: 20px -4px 50 50 #000000;
-		}
-		.grupo:hover .folha{
-			cursor: pointer;
-			transform: rotateY(5deg) rotateZ(11deg) scale(1.5);
-			-webkit-backface-visibility: hidden;
-		}
-		.grupo:hover .verso{
-			cursor: pointer;
-			transform: rotateX(-15deg) rotateY(35deg) rotateZ(13.2deg) scale(1.5);
-			-webkit-backface-visibility: hidden;
-		}
-	</style>
+			.grupo:hover .capa{
+				cursor: pointer;
+				transform: rotateY(45deg) rotateZ(15deg) scale(1.51);
+				-webkit-backface-visibility: hidden;
+				box-shadow: 20px -4px 50 50 #000000;
+			}
+			.grupo:hover .folha{
+				cursor: pointer;
+				transform: rotateY(5deg) rotateZ(11deg) scale(1.5);
+				-webkit-backface-visibility: hidden;
+			}
+			.grupo:hover .verso{
+				cursor: pointer;
+				transform: rotateX(-15deg) rotateY(35deg) rotateZ(13.2deg) scale(1.5);
+				-webkit-backface-visibility: hidden;
+			}
+			p {
+				transform: rotateZ(90deg);
+				margin-left: 10px;
+				font-size: 6px;
+				white-space: nowrap;
+				text-align: center;
+			}
+			img {
+				width: 80%;
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
     <body>
 		<h1>ARQUIVO DOS DETETIVES</h1>
-		<h6>em breve</h6>
 		<div class="lado">
-			<div id="luna" class="grupo">
-				<div class="capa"></div>
+			<div id="luna" class="grupo" onclick="location.href = 'alfabetoluna.html';">
+				<div class="capa">
+					<img src="imgs/luna/lunapolaroid.png">
+				</div>
 				<div class="folha"></div>
 				<div class="verso">
 					<div class="etiqueta"></div>
 				</div>
 			</div>
-			<div id="timelinecube"class="grupo">
-				<div class="capa"></div>
+			<div id="npo" class="grupo" onclick="location.href = 'npo.html';">
+				<div class="capa">
+					<img src="imgs/npo/npopolaroid.png">
+				</div>
 				<div class="folha"></div>
 				<div class="verso">
 					<div class="etiqueta"></div>
 				</div>
 			</div>
-			<div id="whitedoorarg"class="grupo">
-				<div class="capa"></div>
+			<div id="timelinecube" class="grupo" onclick="location.href = 'cube.html';">
+				<div class="capa">
+					<img src="imgs/cube/cubepolaroid.png">
+				</div>
 				<div class="folha"></div>
 				<div class="verso">
 					<div class="etiqueta"></div>
 				</div>
 			</div>
-			<div id="npo"class="grupo">
-				<div class="capa"></div>
+			<div id="whitedoorarg"class="grupo" onclick="location.href = 'twd.html';">
+				<div class="capa">
+					<img src="imgs/twd/twdpolaroid.png">
+				</div>
 				<div class="folha"></div>
 				<div class="verso">
 					<div class="etiqueta"></div>
 				</div>
 			</div>
+
 		</div>
 	</body>
 </html>

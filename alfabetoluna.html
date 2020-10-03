@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+		<title>Alfabeto Luna - Arquivo Dos Detetives</title>
+		<link rel="icon" type="image/png" href="imgs/site/icone.png">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+		<style>
+		html, body {
+			background: #08080A;
+			margin: auto;
+			font-family: 'Special Elite', cursive;
+		}
+		h1 {
+			text-align: center;	
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		p {
+			font-size: 15px;
+			text-align: center;	
+			margin-left: 5px;
+			margin-right: 5px;
+		}
+		table {
+			margin-left:auto;
+			margin-right:auto;
+			margin-top: 12px;
+		}
+		td {
+			font-size: 18px;
+			text-align: center;
+		}
+		.titulo h1 {
+			font-size: 50px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			color: #FFFFFF;
+		}
+		.tudo {
+			width: 100%;
+			height: 90%;
+		}
+		
+		.tudo .pasta {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.pasta {
+			width: 100%;
+			min-width: 40%;
+			max-width: 100%;
+			height: 800px;
+			position: relative;
+			perspective: 5000px;
+			transition: 600ms ease-out;
+		}
+		.grupo {
+			position: absolute;
+			width: 65%;
+			height: 100%;
+			transition: 600ms ease-out;			
+			transform-style: preserve-3d;
+			transform-origin: left;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+		.capafrente, .capaverso, .fimcapa {
+			position: absolute;
+			width: 500px;
+			height: 800px;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 14px;
+			border-bottom-right-radius: 14px;
+			border-bottom-left-radius: 0px;
+			transition: 600ms ease-out;
+		}
+		.capafrente, .capaverso {
+			background: #f9d98c;
+		}
+		.fimcapa {
+			background: #d1b676;
+		}
+		.folhafrente, .folhaverso {
+			position: absolute;
+			background: #FFFFFF;
+			width: 470px;
+			height: 770px;
+			transition: 600ms ease-out;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.folhaverso {
+			transform: rotateY(180deg);
+		}
+		.folhafrente img, .folhaverso img {
+			width: 60%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin: auto;
+		}
+		.etiqueta{
+			z-index: 1;
+			transform: rotateZ(90deg);		
+			margin-left: 415px;
+			margin-top: 75px;
+			width: 200px;
+			height: 50px;
+			background: #d1b676;
+			border-top-left-radius: 12px;
+			border-top-right-radius: 12px;
+			border-bottom-right-radius: 0px;
+			border-bottom-left-radius: 0px;
+		}
+		.etiqueta h3 {
+			text-align: center;
+			padding-top: 12px;
+		}
+		#pasta #grupocapa {
+			width: 500px; 
+			height: 800px; 
+			z-index: 300; 
+		}
+		#pasta #grupocapa #capafrente{
+			z-index: 298;
+		}
+		#capafrente img {
+			width: 90%;
+			position: absolute;
+			margin: auto;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		#pasta #grupocapa #versocapa {
+			z-index: 296;
+		}
+		#pasta #grupofolha1 {
+			width: 500px; 
+			height: 800px; 
+			z-index: 294;
+		}
+		#pasta #grupofolha1 #folhafrente1 {
+			z-index: 292;
+		}
+		#pasta #grupofolha1 #folhaverso1 {
+			z-index: 290;
+		}
+		#pasta #grupofolha2 {
+			width: 500px; 
+			height: 800px; 
+			z-index: 288;
+		}
+		#pasta #grupofolha2 #folhafrente2 {
+			z-index: 286;
+		}
+		#pasta #grupofolha2 #folhaverso2 {
+			z-index: 284;
+		}
+		#pasta #grupofolha3 {
+			width: 500px; 
+			height: 800px; 
+			z-index: 282;
+		}
+		#pasta #grupofolha3 #folhafrente3 {
+			z-index: 280;
+		}
+		#pasta #grupofolha3 #folhaverso3 {
+			z-index: 278;
+		}
+		#pasta #grupofimcapa {
+			width: 500px; 
+			height: 800px; 
+			z-index: 1; 
+		}
+		</style>
+	</head>
+	<body>
+		<div class="titulo" onclick="location.href = 'index.html';">
+			<h1>ARQUIVO DOS DETETIVES</h1>
+		</div>
+		<div id="tudo" class="tudo">
+			<div id="pasta" class="pasta">
+				<div id="grupocapa" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupocapa', 'capafrente', 'capaverso', 1, 3, 5, 296, 298, 300)">
+					<div id="capafrente" class="capafrente">
+						<img src="imgs/luna/lunapolaroid.png">
+					</div>
+					<div id="capaverso" class="capaverso"></div>
+				</div>
+				<div id="grupofolha1" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha1', 'folhafrente1', 'folhaverso1', 7, 9, 11, 290, 292, 294)">
+					<div id="folhafrente1" class="folhafrente">
+						<h1>ALFABETO LUNA</h1>
+						<img src="imgs/luna/tabelaalfabeto.png">
+					</div>
+					<div id="folhaverso1" class="folhaverso">
+						<h1>TRADUÇÕES</h1>
+						<img src="imgs/luna/textoparede1.png">
+						<table>
+								<tr>
+									<td>AGE</td>
+									<td></td>
+									<td>WISDOM MAN CRAFT WOODEN BOAT</td>
+								</tr>
+								<tr>
+									<td>LAYH</td>
+									<td></td>
+									<td>MAGIC MAN SUMMON WIND TO BLOW</td>
+								</tr>
+						</table>
+						<img src="imgs/luna/textoparede2.png">
+						<table>
+								<tr>
+									<td>AGE</td>
+									<td></td>
+									<td>NAME AND FAME ARE ONCE WE BORROW</td>
+								</tr>
+								<tr>
+									<td>URI</td>
+									<td></td>
+									<td>TO LIGHT A CANDLE IS TO CAST A SHADOW</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				<div id="grupofolha2" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha2', 'folhafrente2', 'folhaverso2', 13, 15, 17, 284, 286, 288)">
+					<div id="folhafrente2" class="folhafrente">
+						<h1>TRADUÇÕES</h1>
+						<img src="imgs/luna/textoparede3.png">
+						<table>
+								<tr>
+									<td>AGE</td>
+									<td></td>
+									<td>HEAVEN CRACK INTO RAIN AND LIGHT</td>
+								</tr>
+								<tr>
+									<td>NAHX</td>
+									<td></td>
+									<td>FLOOD WASH AWAY GREED AND PRIDE</td>
+								</tr>
+						</table>
+						<img src="imgs/luna/textoparede4.png">
+						<table>							
+								<tr>
+									<td>AGE</td>
+									<td></td>
+									<td>ALL TREE AND FRUIT JUST A SEEDS JOB</td>
+								</tr>
+								<tr>
+									<td>AHSIM</td>
+									<td></td>
+									<td>WHEELS KEEP ROLLING THAT NEVER STOP</td>
+								</tr>
+						</table>
+					</div>
+					<div id="folhaverso2" class="folhaverso">
+						<h1>TRADUÇÕES</h1>
+						<img style="width: 50%;"src="imgs/luna/livro1.png">
+						<p>AT THE BEGINNING OF EVERYTHING. 
+						   THE OLD GOD WAS BORN FROM THE VOID.
+						   IT WAVED ITS HUGE WING AND STIRRED THE SPACE. 
+						   THE MATTER WHICH PRECIPITATED FROM THE CHAOS BECAME THE BASIC SUBSTANCE THAT MADE UP THE WORLD.</p>
+						<p>THE ENERGY THAT RAISED AND YELL FROM THE CHAOS SEPARATED INTO LIGHT AND DARKNESS FROM THE LIGHT.
+						   GRADUALLY IT GAVE BIRTH TO LIFE AND HOPE. 
+						   AND ALSO TO DARKNESS. 
+						   DEATH</p>
+						<img src="imgs/luna/livro2.png">
+						<p>THE FIRST SPIRIT CAME FROM THE SKY BY THE AGE OF DUNE. 
+						IT HAD THE POWER OF THE OLD GOD'S FEAT HER. 
+						IT CREATED THE MOON TO GUIDE THE LOST SOULS AT NIGHT. 
+						AND GAVE SHADOW AT THE DAY TO PROTECT THE PEOPLE FROM THE BURNING SUN. 
+						THE TOWER WAS BUILT. PEOPLE CALLED THEM THE MOON GUARDIANS.</p>
+					</div>
+				</div>
+				<div id="grupofolha3" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha3', 'folhafrente3', 'folhaverso2', 19, 21, 23, 278, 280, 282)">
+					<div id="folhafrente3" class="folhafrente">
+						<h1>TRADUÇÕES</h1>
+						<img src="imgs/luna/livro3.png">
+						<p>THE NIGHT WOULD BE RELEASED IN THE DARK HOURS OF THE DAY BY THE MOON GUARDIANS.
+						   NIGHTMARES. 
+						   DARK CROWS. 
+						   MONSTERS AND GHOSTS WOULD BE OUT AND HUNTING.</p>
+						<p>THEY FED ON THE WEAK. 
+						   THE OLD AND THE DEAD SOULS. 
+						   PURIFY THE SOUL TO ALLOW THE NEW LIFE AWAKE AND TAKEN PLACE DURING THE DAY. 
+						   DURING THE LIGHT HOURS. 
+						   THEY HIBERNATE OR LINGERING AMONG THE WICKED THOUGHTS.</p>
+						<img src="imgs/luna/livro4.png">
+						<p>LIKE THE MIRROR THAT REFLECTS, THE ETERNAL CAME WITH ALL THE SHADOW AND LIGHT.
+						   LIKE LIFE GIVES DEATH LOVER ENDLESS.</p>
+                        <p>EVERY DARKEST CAVERN WAS INSIDE THE MOUNTAIN WITH BEAUTIFUL SUNSHINE ON THE OUTSIDE.
+						   IF YOU WANT TO CAST A SHADOW YOU ONLY NEED TO LIT A LIGHT. 
+						   THE MOON GUARDIANS KNOW THAT THE BEST MAGIC IS NOT THE MAGIC AT ALL. 
+						   IT HAS ALREADY BEEN INSIDE US. 
+						   IT'S THE GIFT OF LIFE AND DEATH THEMSELVES FROM THE OLD GOD.</p>
+					</div>
+					<div id="folhaverso3" class="folhaverso">
+					<h1 style="color: #FFFFFF;">A PESSOA COM A MAIOR QI DO MUNDO</h1>
+					</div>
+				</div>
+				<div id="grupofimcapa">
+					<div id="fimcapa" class="fimcapa">
+						<div class="etiqueta">
+							<h3>ALFABETO LUNA</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function sleep(ms) {
+				return new Promise(resolve => setTimeout(resolve, ms));
+			}
+			
+			async function Gira(x, y, z, a, b, v, c, d, q) {
+				if (document.getElementById(x).style.transform == "rotateY(0deg)"){
+					document.getElementById(x).style.transform = "rotateY(-180deg)";
+					document.getElementById(z).style.zIndex = b;	
+					document.getElementById(y).style.zIndex = a;				
+					await sleep(600);
+					document.getElementById(x).style.zIndex = v;
+				} else {
+					document.getElementById(x).style.transform = "rotateY(0deg)";
+					document.getElementById(z).style.zIndex = c;
+					document.getElementById(y).style.zIndex = d;
+					await sleep(0.1);
+					document.getElementById(x).style.zIndex = q;
+					}
+				} 
+		</script>
+	</body>
+</html>
