@@ -37,26 +37,30 @@
 			margin-bottom: 30px;
 			color: #FFFFFF;
 		}
-		.tudo {
-			width: 100%;
-			height: 90%;
+		.container {
+			position: relative;
+			width: 100%; 
+			margin:auto;
+			display: -webkit-flex;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: auto;
+			box-sizing: border-box;
 		}
 		
-		.tudo .pasta {
+		.container .pasta {
+			display: -webkit-flex;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
 		.pasta {
-			width: 100%;
-			min-width: 40%;
-			max-width: 100%;
-			height: 800px;
-			position: relative;
 			perspective: 5000px;
 			transition: 600ms ease-out;
 		}
 		.grupo {
+			display: block;
 			position: absolute;
 			width: 65%;
 			height: 100%;
@@ -89,8 +93,6 @@
 			width: 470px;
 			height: 770px;
 			transition: 600ms ease-out;
-			box-sizing: border-box;
-			overflow: hidden;
 		}
 		.folhaverso {
 			transform: rotateY(180deg);
@@ -121,11 +123,7 @@
 		}
 		#pasta #grupocapa {
 			width: 500px; 
-			height: 800px; 
-			z-index: 300; 
-		}
-		#pasta #grupocapa #capafrente{
-			z-index: 298;
+			height: 800px;  
 		}
 		#capafrente img {
 			width: 90%;
@@ -136,41 +134,17 @@
 			right: 0;
 			bottom: 0;
 		}
-		#pasta #grupocapa #versocapa {
-			z-index: 296;
-		}
 		#pasta #grupofolha1 {
 			width: 500px; 
 			height: 800px; 
-			z-index: 294;
-		}
-		#pasta #grupofolha1 #folhafrente1 {
-			z-index: 292;
-		}
-		#pasta #grupofolha1 #folhaverso1 {
-			z-index: 290;
 		}
 		#pasta #grupofolha2 {
 			width: 500px; 
-			height: 800px; 
-			z-index: 288;
-		}
-		#pasta #grupofolha2 #folhafrente2 {
-			z-index: 286;
-		}
-		#pasta #grupofolha2 #folhaverso2 {
-			z-index: 284;
+			height: 800px;
 		}
 		#pasta #grupofolha3 {
 			width: 500px; 
-			height: 800px; 
-			z-index: 282;
-		}
-		#pasta #grupofolha3 #folhafrente3 {
-			z-index: 280;
-		}
-		#pasta #grupofolha3 #folhaverso3 {
-			z-index: 278;
+			height: 800px;
 		}
 		#pasta #grupofimcapa {
 			width: 500px; 
@@ -183,20 +157,21 @@
 		<div class="titulo" onclick="location.href = 'index.html';">
 			<h1>ARQUIVO DOS DETETIVES</h1>
 		</div>
-		<div id="tudo" class="tudo">
+		<div id="tudo" class="container">
+			<div style="width: 500px; height: 800px;"></div>
 			<div id="pasta" class="pasta">
-				<div id="grupocapa" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupocapa', 'capafrente', 'capaverso', 1, 3, 5, 296, 298, 300)">
-					<div id="capafrente" class="capafrente">
+				<div id="grupocapa" class="grupo" style="transform: rotateY(0deg); z-index: 300;" onclick="Gira('grupocapa', 'capafrente', 'capaverso', 1, 3, 5, 296, 298, 300)">
+					<div id="capafrente" class="capafrente" style="z-index: 298;">
 						<img src="imgs/luna/lunapolaroid.png">
 					</div>
-					<div id="capaverso" class="capaverso"></div>
+					<div id="capaverso" class="capaverso" style="z-index: 296;"></div>
 				</div>
-				<div id="grupofolha1" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha1', 'folhafrente1', 'folhaverso1', 7, 9, 11, 290, 292, 294)">
-					<div id="folhafrente1" class="folhafrente">
+				<div id="grupofolha1" class="grupo" style="transform: rotateY(0deg); z-index: 294;" onclick="Gira('grupofolha1', 'folhafrente1', 'folhaverso1', 7, 9, 11, 290, 292, 294)">
+					<div id="folhafrente1" class="folhafrente" style="z-index: 292;"> 
 						<h1>ALFABETO LUNA</h1>
 						<img src="imgs/luna/tabelaalfabeto.png">
 					</div>
-					<div id="folhaverso1" class="folhaverso">
+					<div id="folhaverso1" class="folhaverso" style="z-index: 290;">
 						<h1>TRADUÇÕES</h1>
 						<img src="imgs/luna/textoparede1.png">
 						<table>
@@ -226,8 +201,8 @@
 						</table>
 					</div>
 				</div>
-				<div id="grupofolha2" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha2', 'folhafrente2', 'folhaverso2', 13, 15, 17, 284, 286, 288)">
-					<div id="folhafrente2" class="folhafrente">
+				<div id="grupofolha2" class="grupo" style="transform: rotateY(0deg); z-index: 288;" onclick="Gira('grupofolha2', 'folhafrente2', 'folhaverso2', 13, 15, 17, 284, 286, 288)">
+					<div id="folhafrente2" class="folhafrente" style="z-index: 286;">
 						<h1>TRADUÇÕES</h1>
 						<img src="imgs/luna/textoparede3.png">
 						<table>
@@ -256,7 +231,7 @@
 								</tr>
 						</table>
 					</div>
-					<div id="folhaverso2" class="folhaverso">
+					<div id="folhaverso2" class="folhaverso" style="z-index: 284;">
 						<h1>TRADUÇÕES</h1>
 						<img style="width: 50%;"src="imgs/luna/livro1.png">
 						<p>AT THE BEGINNING OF EVERYTHING. 
@@ -275,8 +250,8 @@
 						THE TOWER WAS BUILT. PEOPLE CALLED THEM THE MOON GUARDIANS.</p>
 					</div>
 				</div>
-				<div id="grupofolha3" class="grupo" style="transform: rotateY(0deg);" onclick="Gira('grupofolha3', 'folhafrente3', 'folhaverso2', 19, 21, 23, 278, 280, 282)">
-					<div id="folhafrente3" class="folhafrente">
+				<div id="grupofolha3" class="grupo" style="transform: rotateY(0deg); z-index: 282;" onclick="Gira('grupofolha3', 'folhafrente3', 'folhaverso2', 19, 21, 23, 278, 280, 282)">
+					<div id="folhafrente3" class="folhafrente" style="z-index: 280;">
 						<h1>TRADUÇÕES</h1>
 						<img src="imgs/luna/livro3.png">
 						<p>THE NIGHT WOULD BE RELEASED IN THE DARK HOURS OF THE DAY BY THE MOON GUARDIANS.
@@ -297,7 +272,7 @@
 						   IT HAS ALREADY BEEN INSIDE US. 
 						   IT'S THE GIFT OF LIFE AND DEATH THEMSELVES FROM THE OLD GOD.</p>
 					</div>
-					<div id="folhaverso3" class="folhaverso">
+					<div id="folhaverso3" class="folhaverso" style="z-index: 278;">
 					<h1 style="color: #FFFFFF;">A PESSOA COM A MAIOR QI DO MUNDO</h1>
 					</div>
 				</div>
@@ -323,11 +298,10 @@
 					await sleep(600);
 					document.getElementById(x).style.zIndex = v;
 				} else {
-					document.getElementById(x).style.transform = "rotateY(0deg)";
+					document.getElementById(x).style.zIndex = q;
 					document.getElementById(z).style.zIndex = c;
 					document.getElementById(y).style.zIndex = d;
-					await sleep(0.1);
-					document.getElementById(x).style.zIndex = q;
+					document.getElementById(x).style.transform = "rotateY(-0deg)";
 					}
 				} 
 		</script>
